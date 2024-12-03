@@ -19,6 +19,9 @@ public class FilterDemo {
 		}
 		return Newlst;
 	};
+	
+	// Java 8 way of filtering a List
+	public static UnaryOperator<List<Integer>> FilterEven2 = lst -> lst.stream().filter(i -> i % 2 == 0).toList();
 
 	public static void main(String[] args) {
 		// Math Random applied List
@@ -29,6 +32,6 @@ public class FilterDemo {
 		System.out.println(lst1);
 		System.out.println(FilterEven.apply(lst1));
 		System.out.println(lst2);
-		System.out.println(FilterEven.apply(lst2));
+		System.out.println(FilterEven2.apply(lst2));
 	}
 }
